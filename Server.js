@@ -56,7 +56,7 @@ app.put("/users/:id", (req, res) => {
 app.delete("/:id", (req, res) => {
   User.deleteOne({ _id: req.params.id })
     .then((data) => {
-      res.send(data);
+      res.send({ msg: "user removed ", data });
     })
     .catch((err) => {
       res.send({ message: err });
